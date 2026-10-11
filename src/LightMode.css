@@ -13,3 +13,13 @@ main.theme-light .window-copy span{color:#2876aa}
 main.theme-light .window-orb{border-color:rgba(62,125,177,.43);box-shadow:0 0 28px rgba(62,148,218,.12)}
 main.theme-light .window-orb:before,main.theme-light .window-orb:after{border-color:rgba(69,126,174,.3)}
 main.theme-light .window-orb span{color:#506d89}
+main.theme-light .about-section{background:linear-gradient(112deg,#e6f0f9,#f5f8fc 54%,#e5eef7)}
+main.theme-light .about-orb{background:#6eaddb;opacity:.12}
+main.theme-light .about-ring{border-color:rgba(48,112,165,.42)}
+main.theme-light .ring-two{border-color:rgba(72,134,184,.36)}
+main.theme-light .about-core{color:#214c72;background:radial-gradient(circle,#fafdff,#cfe5f5);border-color:rgba(51,119,171,.52);box-shadow:0 0 38px rgba(67,139,194,.2)}
+main.theme-light .about-core span{color:#3181b4}
+main.theme-light .orbit-word{color:#476987}
+main.theme-light .about-note{background:rgba(255,255,255,.54);border-left-color:#397caf}
+main.theme-light .about-note span{color:#24618e}
+main.theme-light .about-note p{color:#34516e}
