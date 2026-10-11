@@ -3,6 +3,7 @@ import './App.css'
 import './Leadership.css'
 import './Theme.css'
 import './Responsive.css'
+import './Typography.css'
 
 const serviceCopy = {
   en: [
