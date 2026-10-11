@@ -1,0 +1,18 @@
+/* A consistent translucent glass surface for the main interactive panels. */
+.site-header.scrolled{background:rgba(9,15,28,.58);backdrop-filter:blur(24px) saturate(145%);-webkit-backdrop-filter:blur(24px) saturate(145%);border-bottom-color:rgba(183,213,247,.16);box-shadow:0 8px 32px rgba(3,9,18,.13)}
+.service-card{background:linear-gradient(145deg,rgba(31,49,74,.54),rgba(13,23,39,.62));backdrop-filter:blur(18px) saturate(135%);-webkit-backdrop-filter:blur(18px) saturate(135%);border:1px solid rgba(190,218,249,.18);box-shadow:inset 0 1px rgba(255,255,255,.08),0 16px 40px rgba(2,8,17,.16)}
+.service-card:hover{background:linear-gradient(145deg,rgba(47,72,103,.68),rgba(16,31,51,.72));border-color:rgba(145,206,255,.43);box-shadow:inset 0 1px rgba(255,255,255,.12),0 20px 48px rgba(2,8,17,.23)}
+.work-card{background:rgba(19,31,49,.55);backdrop-filter:blur(20px) saturate(130%);-webkit-backdrop-filter:blur(20px) saturate(130%);border-color:rgba(187,213,241,.18);box-shadow:inset 0 1px rgba(255,255,255,.07),0 20px 55px rgba(2,8,17,.13)}
+.leader-card{background:linear-gradient(115deg,rgba(24,39,61,.58),rgba(14,24,40,.58));backdrop-filter:blur(22px) saturate(135%);-webkit-backdrop-filter:blur(22px) saturate(135%);border-color:rgba(184,215,247,.2);box-shadow:inset 0 1px rgba(255,255,255,.08),0 22px 55px rgba(2,8,17,.17)}
+.contact-form{background:rgba(18,30,48,.56);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);border-color:rgba(187,214,243,.2);box-shadow:inset 0 1px rgba(255,255,255,.08),0 18px 48px rgba(2,8,17,.15)}
+.about-note,.about-core,.window-orb{backdrop-filter:blur(14px) saturate(130%);-webkit-backdrop-filter:blur(14px) saturate(130%)}
+.button-primary{box-shadow:inset 0 1px rgba(255,255,255,.48),0 8px 26px rgba(75,157,220,.24)}
+main.theme-light .site-header.scrolled{background:rgba(248,251,255,.7);border-bottom-color:rgba(45,83,124,.16);box-shadow:0 8px 28px rgba(40,69,101,.08)}
+main.theme-light .service-card{background:linear-gradient(145deg,rgba(255,255,255,.77),rgba(242,248,254,.7));border-color:rgba(68,112,155,.19);box-shadow:inset 0 1px rgba(255,255,255,.95),0 14px 32px rgba(39,73,109,.08)}
+main.theme-light .service-card:hover{background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(234,245,254,.86));border-color:rgba(57,132,187,.38);box-shadow:inset 0 1px white,0 18px 38px rgba(39,73,109,.13)}
+main.theme-light .work-card{background:rgba(255,255,255,.7);border-color:rgba(65,105,145,.2);box-shadow:inset 0 1px white,0 18px 42px rgba(39,73,109,.09)}
+main.theme-light .leader-card{background:linear-gradient(115deg,rgba(255,255,255,.76),rgba(241,247,253,.68));border-color:rgba(65,105,145,.2);box-shadow:inset 0 1px white,0 20px 46px rgba(39,73,109,.1)}
+main.theme-light .contact-form{background:rgba(255,255,255,.68);border-color:rgba(65,105,145,.22);box-shadow:inset 0 1px white,0 18px 42px rgba(39,73,109,.1)}
+main.theme-light .about-note{background:rgba(255,255,255,.42)}
+@media(max-width:700px){.service-card,.work-card,.leader-card,.contact-form{backdrop-filter:blur(14px) saturate(125%);-webkit-backdrop-filter:blur(14px) saturate(125%)}}
+@media(prefers-reduced-transparency:reduce){.site-header.scrolled,.service-card,.work-card,.leader-card,.contact-form{backdrop-filter:none;-webkit-backdrop-filter:none;background-color:rgba(16,27,44,.96)}main.theme-light .site-header.scrolled,main.theme-light .service-card,main.theme-light .work-card,main.theme-light .leader-card,main.theme-light .contact-form{background-color:rgba(248,251,255,.98)}}
