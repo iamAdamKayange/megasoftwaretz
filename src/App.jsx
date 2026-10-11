@@ -5,6 +5,7 @@ import './Theme.css'
 import './Responsive.css'
 import './Typography.css'
 import './Glass.css'
+import './LightMode.css'
 
 const serviceCopy = {
   en: [

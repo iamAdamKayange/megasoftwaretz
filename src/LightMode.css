@@ -1,0 +1,4 @@
+/* Light treatments for the leadership section and its portrait stage. */
+main.theme-light .leadership-section{background:#edf3f9}
+main.theme-light .leader-photo-wrap{background:radial-gradient(ellipse at 50% 65%,#c5def1,#dce9f5 64%,#e8f0f8)}
+main.theme-light .leader-photo-index{color:#294d70}
