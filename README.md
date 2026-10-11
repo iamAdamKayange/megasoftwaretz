@@ -1,16 +1,29 @@
-# React + Vite
+# MegaSoftware Company Limited
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Responsive company website for MegaSoftware Company Limited, built with React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## Available commands
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `npm run dev` — start the local development server.
+- `npm run build` — create the production build in `dist/`.
+- `npm run preview` — preview the production build locally.
+- `npm run lint` — run Oxlint.
 
-## Expanding the Oxlint configuration
+## Site sections
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- Home, services, selected work, company information, leadership, careers, and contact.
+- Adam Kayange’s Founder & Chief Executive Officer section uses `public/images/adam.webp`.
+- Contact details: `megasoftwarecompanytz@gmail.com` and `+255 629 095 954`.
+- The contact form prepares a copyable enquiry and links to the company email. The careers form prepares an application email in the visitor’s mail app. Visitors must send their messages; applicants should attach their CV or resume.
+- Motion effects respect the `prefers-reduced-motion` accessibility setting.
+
+## Deployment
+
+Build with `npm run build` and deploy the generated `dist/` directory to a static hosting provider that supports single-page Vite apps.
