@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import './Leadership.css'
 import './Theme.css'
+import './Responsive.css'
 
 const serviceCopy = {
   en: [
@@ -35,7 +36,7 @@ const pageCopy = {
     nav: ['Mwanzo', 'Huduma', 'Miradi', 'Kuhusu', 'Ajira', 'Mawasiliano'], talk: 'Tuzungumze',
     heroEyebrow: 'UBUNIFU WA KIDIJITALI · TANZANIA', heroTitle: ['Tunajenga suluhisho', 'za kidijitali kwa', 'maisha bora zaidi'], heroDescription: 'Tunabadilisha mawazo makubwa kuwa bidhaa za kidijitali — tovuti, programu za simu, mifumo maalum, AI na game za 3D.', explore: 'Ona huduma zetu', discuss: 'Jadili mradi', local: 'Tunaielewa Tanzania.', global: 'Mawazo yanafika mbali.', scroll: 'SHUKA UONE ZAIDI',
     servicesEyebrow: 'HUDUMA ZETU', servicesTitle: ['Teknolojia', 'inayokupeleka mbele.'], servicesIntro: 'Tunaunganisha ubunifu na uhandisi imara kujenga bidhaa za kidijitali na game ambazo watu wanapenda kutumia.', servicesFoot: 'TIMU MOJA. KUANZIA WAZO HADI UZINDUZI.', servicesLink: 'Tuambie unachotaka kujenga', discussService: 'Jadili',
-    workEyebrow: 'KAZI ZETU', workTitle: ['Tayari kwa', 'hatua inayofuata.'], workIntro: 'Kazi nzuri huanza na changamoto halisi. Tunashirikiana na timu kubadilisha mawazo kuwa bidhaa za kidijitali.', workConcept: 'IMEFANYWA KWA UMakini', workIdea: 'Wazo lako kubwa linaanzia hapa.', workCollab: 'MCHAKATO WA PAMOJA', workCardTitle: 'Tujenge kitu chenye maana.', workCardText: 'Kila mradi ni tofauti. Wako pia uwe wa kipekee.', workNote: 'Tunaendelea kujenga jalada la miradi yetu.', workLink: 'Tuulize kuhusu kazi tunazofanya',
+    workEyebrow: 'KAZI ZETU', workTitle: ['Tayari kwa', 'hatua inayofuata.'], workIntro: 'Kazi nzuri huanza na changamoto halisi. Tunashirikiana na timu kubadilisha mawazo kuwa bidhaa za kidijitali.', workConcept: 'IMEFANYWA KWA UMAKINI', workIdea: 'Wazo lako kubwa linaanzia hapa.', workCollab: 'MCHAKATO WA PAMOJA', workCardTitle: 'Tujenge kitu chenye maana.', workCardText: 'Kila mradi ni tofauti. Wako pia uwe wa kipekee.', workNote: 'Tunaendelea kujenga jalada la miradi yetu.', workLink: 'Tuulize kuhusu kazi tunazofanya',
     aboutEyebrow: 'KUHUSU SISI', aboutTitle: ['Mawazo makubwa.', 'Yaliyojengwa kwa', 'kazi bora.'], aboutText: 'MegaSoftware Company Limited ni kampuni ya teknolojia kutoka Tanzania inayojenga suluhisho za kidijitali kwa maisha bora zaidi. Tunafanya kazi kwa umakini, udadisi na mawazo yaliyo wazi.', founderLink: 'Kutana na mwanzilishi', leadershipEyebrow: 'MWANZILISHI WA MAONO', leaderRole: 'Mwanzilishi na Afisa Mkuu Mtendaji (CEO)', leaderBio: 'Anajenga suluhisho za kidijitali kwa mustakabali bora, kwa kuzingatia teknolojia yenye manufaa na maendeleo.', leaderLink: 'Wasiliana na MegaSoftware',
     careersEyebrow: 'AJIRA MEGASOFTWARE', careersTitle: ['Watu wazuri.', 'Fursa kubwa.'], careersText: 'Ungependa kufanya kazi nasi? Tuambie kuhusu wewe na nafasi unayotafuta.', careerLink: 'Tuma ombi kwa email', applicationHeading: 'JITAMBULISHE', applications: 'MAOMBI YA AJIRA', fullName: 'Jina kamili', email: 'Anuani ya email', phone: 'Namba ya simu', optional: 'Si lazima', role: 'Nafasi unayoomba', rolePlaceholder: 'mf. Frontend Developer', experience: 'Uzoefu au utambulisho mfupi', experiencePlaceholder: 'Tuambie kuhusu ujuzi na uzoefu wako…', github: 'Kiungo cha wasifu wako GitHub', portfolio: 'Kiungo cha Portfolio au LinkedIn', prepareApplication: 'Andaa ombi', applicationReady: 'Ombi lako la kazi limeandaliwa. Ambatisha CV yako, kisha', openEmail: 'lifungue kwenye email', applicationCaption: 'Email itafunguka ikiwa na maelezo haya. Ambatisha CV kabla ya kutuma.',
     processEyebrow: 'JINSI TUNAVYOFANYA KAZI', processTitle: ['Hatua zilizo wazi.', 'Matokeo yenye maana.'], processIntro: 'Tunashirikiana hatua kwa hatua ili kufikia lengo na kuzingatia maelezo.', steps: ['Kuelewa hitaji', 'Kupanga', 'Kubuni', 'Kutengeneza', 'Kupima', 'Kuzindua'],
@@ -69,21 +70,35 @@ function App() {
   }, [language])
 
   useEffect(() => {
-    const update = () => setScrolled(window.scrollY > 30)
-    window.addEventListener('scroll', update, { passive: true })
     const targets = document.querySelectorAll('.reveal')
-    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
-      if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target) }
-    }), { threshold: 0.12 })
-    targets.forEach((target) => observer.observe(target))
-    return () => { window.removeEventListener('scroll', update); observer.disconnect() }
+    const revealVisible = () => targets.forEach((target) => {
+      const bounds = target.getBoundingClientRect()
+      if (bounds.top < window.innerHeight - 24 && bounds.bottom > 0) target.classList.add('is-visible')
+    })
+    const update = () => {
+      setScrolled(window.scrollY > 30)
+      revealVisible()
+    }
+    window.addEventListener('scroll', update, { passive: true })
+    let observer
+    if ('IntersectionObserver' in window) {
+      observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target) }
+      }), { threshold: 0.12 })
+      targets.forEach((target) => observer.observe(target))
+    }
+    requestAnimationFrame(revealVisible)
+    return () => { window.removeEventListener('scroll', update); observer?.disconnect() }
   }, [])
 
   const closeMenu = () => setMenuOpen(false)
   const submit = (event) => {
     event.preventDefault()
     const form = new FormData(event.currentTarget)
-    const body = [`Name: ${form.get('name')}`, `Email: ${form.get('email')}`, `Service: ${form.get('service')}`, '', 'Project details:', form.get('details')].join('\n')
+    const fields = language === 'sw'
+      ? [`Jina: ${form.get('name')}`, `Email: ${form.get('email')}`, `Huduma: ${form.get('service')}`, '', 'Maelezo ya mradi:', form.get('details')]
+      : [`Name: ${form.get('name')}`, `Email: ${form.get('email')}`, `Service: ${form.get('service')}`, '', 'Project details:', form.get('details')]
+    const body = fields.join('\n')
     setMessageDraft(body)
     setCopied(false)
   }
@@ -94,8 +109,10 @@ function App() {
   const submitApplication = (event) => {
     event.preventDefault()
     const form = new FormData(event.currentTarget)
-    const subject = `Job application — ${form.get('role')}`
-    const body = [`Name: ${form.get('applicantName')}`, `Email: ${form.get('applicantEmail')}`, `Phone: ${form.get('phone') || 'Not provided'}`, `Role: ${form.get('role')}`, '', 'Experience / introduction:', form.get('experience'), '', `GitHub: ${form.get('github') || 'Not provided'}`, `Portfolio / LinkedIn: ${form.get('portfolio') || 'Not provided'}`, '', 'Please attach your CV or resume before sending.'].join('\n')
+    const subject = language === 'sw' ? `Ombi la ajira — ${form.get('role')}` : `Job application — ${form.get('role')}`
+    const body = language === 'sw'
+      ? [`Jina: ${form.get('applicantName')}`, `Email: ${form.get('applicantEmail')}`, `Simu: ${form.get('phone') || 'Haijawekwa'}`, `Nafasi: ${form.get('role')}`, '', 'Uzoefu / utambulisho:', form.get('experience'), '', `GitHub: ${form.get('github') || 'Haijawekwa'}`, `Portfolio / LinkedIn: ${form.get('portfolio') || 'Haijawekwa'}`, '', 'Tafadhali ambatisha CV kabla ya kutuma.'].join('\n')
+      : [`Name: ${form.get('applicantName')}`, `Email: ${form.get('applicantEmail')}`, `Phone: ${form.get('phone') || 'Not provided'}`, `Role: ${form.get('role')}`, '', 'Experience / introduction:', form.get('experience'), '', `GitHub: ${form.get('github') || 'Not provided'}`, `Portfolio / LinkedIn: ${form.get('portfolio') || 'Not provided'}`, '', 'Please attach your CV or resume before sending.'].join('\n')
     setApplicationDraft(`mailto:megasoftwarecompanytz@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`)
   }
 
