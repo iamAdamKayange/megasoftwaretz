@@ -89,7 +89,7 @@ function App() {
     }
     requestAnimationFrame(revealVisible)
     return () => { window.removeEventListener('scroll', update); observer?.disconnect() }
-  }, [])
+  }, [language])
 
   const closeMenu = () => setMenuOpen(false)
   const submit = (event) => {
@@ -151,7 +151,7 @@ function App() {
 
       <section className="services-section section-pad" id="services">
         <div className="section-heading reveal"><div><p className="eyebrow"><span className="eyebrow-dot"></span> {copy.servicesEyebrow}</p><h2>{copy.servicesTitle[0]}<br/><span className="muted-heading">{copy.servicesTitle[1]}</span></h2></div><p className="section-intro">{copy.servicesIntro}</p></div>
-        <div className="services-grid">{services.map((service, index) => <article className="service-card reveal" style={{ '--delay': `${index * 100}ms` }} key={service.name}><div className="card-top"><span className="card-number">0{index + 1} / 05</span><span className="service-icon">{service.icon}</span></div><h3>{service.name}</h3><p>{service.text}</p><div className="card-bottom"><div>{service.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><a href="#contact" aria-label={`${copy.discussService} ${service.name}`}><Arrow diagonal /></a></div></article>)}</div>
+        <div className="services-grid">{services.map((service, index) => <article className="service-card reveal" style={{ '--delay': `${index * 100}ms` }} key={`service-${index}`}><div className="card-top"><span className="card-number">0{index + 1} / 05</span><span className="service-icon">{service.icon}</span></div><h3>{service.name}</h3><p>{service.text}</p><div className="card-bottom"><div>{service.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><a href="#contact" aria-label={`${copy.discussService} ${service.name}`}><Arrow diagonal /></a></div></article>)}</div>
         <div className="services-foot reveal"><span>{copy.servicesFoot}</span><span className="foot-rule"></span><a href="#contact">{copy.servicesLink} <Arrow /></a></div>
       </section>
 
