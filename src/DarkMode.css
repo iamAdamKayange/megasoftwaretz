@@ -1,0 +1,22 @@
+/* Deep navy and luminous blue accents echo the steel-blue reference palette. */
+main.theme-dark{background:#080d18;color:#f1f6ff}
+main.theme-dark .hero{background:radial-gradient(ellipse at 73% 43%,#234468 0,#142a46 32%,#0b1424 68%,#080d18 100%)}
+main.theme-dark .glow-one{background:#3b9fe0;opacity:.27}
+main.theme-dark .glow-two{background:#667de0;opacity:.18}
+main.theme-dark .services-section,main.theme-dark .process-section{background:linear-gradient(135deg,#0b1422,#101d30 48%,#0a111e)}
+main.theme-dark .service-card{background:linear-gradient(145deg,rgba(43,69,99,.64),rgba(12,23,39,.75));border-color:rgba(155,202,239,.23);box-shadow:inset 0 1px rgba(225,241,255,.1),0 16px 40px rgba(1,6,15,.2)}
+main.theme-dark .service-card:hover{background:linear-gradient(145deg,rgba(59,91,126,.74),rgba(16,33,54,.83));border-color:rgba(137,206,255,.48)}
+main.theme-dark .work-section{background:linear-gradient(130deg,#090f1a,#101c2d 53%,#0a111e)}
+main.theme-dark .work-card{background:rgba(24,41,62,.65);border-color:rgba(153,196,233,.22)}
+main.theme-dark .work-visual{background:radial-gradient(ellipse at 51% 41%,#345c84 0,#203d5d 36%,#101d30 78%)}
+main.theme-dark .about-section{background:linear-gradient(112deg,#101f33,#172a43 52%,#0e192a)}
+main.theme-dark .about-ring{border-color:rgba(134,199,243,.38)}
+main.theme-dark .ring-two{border-color:rgba(112,178,231,.32)}
+main.theme-dark .about-orb{background:#3d91cb;opacity:.2}
+main.theme-dark .leadership-section{background:linear-gradient(135deg,#0a111e,#142338 55%,#0b1421)}
+main.theme-dark .leader-card{background:linear-gradient(115deg,rgba(30,51,77,.72),rgba(13,24,40,.76));border-color:rgba(151,196,235,.24)}
+main.theme-dark .leader-photo-wrap{background:radial-gradient(ellipse at 50% 65%,#315d86,#1c3858 64%,#13253b)}
+main.theme-dark .careers-section{background:linear-gradient(115deg,#0f1c2e,#14263d 54%,#0c1727)}
+main.theme-dark .contact-section{background:linear-gradient(115deg,#0d1929,#162941 53%,#0d1828)}
+main.theme-dark .contact-glow{background:#3185be;opacity:.2}
+main.theme-dark .site-footer{background:#080e19;border-color:rgba(142,185,224,.2)}

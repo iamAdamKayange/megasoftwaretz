@@ -6,6 +6,7 @@ import './Responsive.css'
 import './Typography.css'
 import './Glass.css'
 import './LightMode.css'
+import './DarkMode.css'
 
 const serviceCopy = {
   en: [
