@@ -2,3 +2,14 @@
 main.theme-light .leadership-section{background:#edf3f9}
 main.theme-light .leader-photo-wrap{background:radial-gradient(ellipse at 50% 65%,#c5def1,#dce9f5 64%,#e8f0f8)}
 main.theme-light .leader-photo-index{color:#294d70}
+main.theme-light .work-visual{background:radial-gradient(ellipse at 51% 41%,#e0f1ff 0,#d2e4f4 38%,#c6d9eb 76%)}
+main.theme-light .work-light{background:rgba(80,156,211,.22)}
+main.theme-light .work-window{background:linear-gradient(140deg,rgba(255,255,255,.9),rgba(239,247,254,.82));border-color:rgba(62,106,148,.35);box-shadow:0 20px 45px rgba(35,75,113,.17)}
+main.theme-light .window-bar{border-color:rgba(62,106,148,.2)}
+main.theme-light .window-bar i{background:#7896b0}
+main.theme-light .window-bar span,main.theme-light .visual-index{color:#58728c}
+main.theme-light .window-copy b{color:#173552}
+main.theme-light .window-copy span{color:#2876aa}
+main.theme-light .window-orb{border-color:rgba(62,125,177,.43);box-shadow:0 0 28px rgba(62,148,218,.12)}
+main.theme-light .window-orb:before,main.theme-light .window-orb:after{border-color:rgba(69,126,174,.3)}
+main.theme-light .window-orb span{color:#506d89}
